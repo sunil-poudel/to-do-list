@@ -11,3 +11,7 @@ div.tasks{
   font-size: 20pt;
   text-align: center;
 }
+div.tasks:hover{
+  background-color: green;
+  color: white;
+}
