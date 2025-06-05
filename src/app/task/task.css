@@ -2,3 +2,14 @@ div#task{
   border: 1px black solid;
   height: 300px;
 }
+div#task_heading{
+  text-align: center;
+}
+
+@media(max-width: 515px){
+  div#task{
+    margin-top: 60px;
+  }
+
+}
+

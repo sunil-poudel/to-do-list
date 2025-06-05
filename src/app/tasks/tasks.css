@@ -6,7 +6,6 @@ div#tasks_list{
 }
 div.tasks{
   border: 1px solid black;
-  width: auto;
   margin: 10px 10px;
   font-size: 20pt;
   text-align: center;
@@ -14,4 +13,10 @@ div.tasks{
 div.tasks:hover{
   background-color: green;
   color: white;
+}
+@media(max-width: 336px){
+  div#tasks_list{
+    margin-top: 60px;
+  }
+
 }
