@@ -1,0 +1,13 @@
+div#tasks_list{
+  height: 300px;
+  width: 25%;
+  border: 2px solid black;
+  overflow: scroll;
+}
+div.tasks{
+  border: 1px solid black;
+  width: auto;
+  margin: 10px 10px;
+  font-size: 20pt;
+  text-align: center;
+}
