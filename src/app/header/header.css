@@ -19,3 +19,8 @@ header{
     height: 120px;
   }
 }
+@media(max-width: 1007px){
+  header{
+    width:100%;
+  }
+}
