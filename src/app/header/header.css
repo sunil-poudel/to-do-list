@@ -1,0 +1,5 @@
+div#logo_header > img{
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+}
