@@ -1,0 +1,17 @@
+div#menu_div{
+  display: flex;
+  border: black solid 3px;
+  width: 50%;
+  margin: 10px auto;
+
+  gap: 20px;
+}
+div.menu{
+  border: 1px black solid;
+  width: 15%;
+}
+@media(max-width: 1007px){
+  div#menu_div{
+    width:100%;
+  }
+}
