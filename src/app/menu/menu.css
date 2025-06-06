@@ -12,12 +12,12 @@ div.menu{
   text-align: center;
   font-size: 15pt;
   margin-top: 20px;
+  font-weight: bold;
 }
 .menu:hover{
   scale: 1.2;
   border: 1px blue solid;
   background-color: purple;
-  font-weight: bold;
   color: white;
 }
 div.menu > img{
