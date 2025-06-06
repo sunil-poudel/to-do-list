@@ -1,6 +1,6 @@
 div#menu_div{
   display: flex;
-  border: black solid 3px;
+  /*border: black solid 3px;*/
   width: 50%;
   margin: 10px auto;
 
@@ -9,6 +9,20 @@ div#menu_div{
 div.menu{
   border: 1px black solid;
   width: 15%;
+  text-align: center;
+  font-size: 15pt;
+  margin-top: 20px;
+}
+.menu:hover{
+  scale: 1.2;
+  border: 1px blue solid;
+  background-color: purple;
+  font-weight: bold;
+  color: white;
+}
+div.menu > img{
+  height: 30px;
+  width: auto;
 }
 @media(max-width: 1007px){
   div#menu_div{

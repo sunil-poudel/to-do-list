@@ -16,7 +16,7 @@ header{
 }
 @media (max-width: 580px){
   header{
-    height: 120px;
+    height: 150px;
   }
 }
 @media(max-width: 1007px){
