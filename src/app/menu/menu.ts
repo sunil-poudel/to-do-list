@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './menu.css'
 })
 export class Menu {
+  onAdd(){
 
+  }
 }
