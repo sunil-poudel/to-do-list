@@ -20,3 +20,13 @@ div.tasks:hover{
   }
 
 }
+@media(min-width: 511px){
+  div#tasks_list{
+    margin-top: 60px;
+  }
+}
+@media(min-width: 516px){
+  div#tasks_list{
+    margin-top: 10px;
+  }
+}
