@@ -4,10 +4,11 @@ import {Header} from './header/header';
 import {Tasks} from './tasks/tasks';
 import {Task} from './task/task';
 import {Menu} from './menu/menu';
+import {Footer} from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Tasks, Task, Menu],
+  imports: [RouterOutlet, Header, Tasks, Task, Menu, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
