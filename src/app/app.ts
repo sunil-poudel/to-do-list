@@ -5,6 +5,7 @@ import {Tasks} from './tasks/tasks';
 import {Task} from './task/task';
 import {Menu} from './menu/menu';
 import {Footer} from './footer/footer';
+import {TaskData} from './shared/shared';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,9 @@ import {Footer} from './footer/footer';
 })
 export class App {
   protected title = 'to-do-list';
+  newlyAddedTask!: TaskData;
+
+  getNewlyAddedTask(newlyAddedTask: TaskData){
+    this.newlyAddedTask = newlyAddedTask;
+  }
 }

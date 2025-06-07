@@ -1,4 +1,4 @@
-import {Component, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {NewTask} from './new-task/new-task';
 import {TaskData} from '../shared/shared'
 
@@ -22,5 +22,10 @@ export class Menu {
   }
   getSubmittedTask(submittedTask: TaskData){
     this.submittedTask = submittedTask;
+  }
+
+  @Output() submittedTaskToApp = new EventEmitter<TaskData>();
+  sendSubmittedTaskToApp(){
+    this.submittedTaskToApp.emit(this.submittedTask);
   }
 }
