@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {TaskData} from '../../shared/shared';
 
 @Component({
   selector: 'app-new-task',
@@ -19,8 +20,13 @@ export class NewTask {
     this.displayFlag.emit(false);
   }
 
+  @Output() submittedTask = new EventEmitter<TaskData>();
   onSubmit(){
-
+    this.submittedTask.emit({
+      title: this.enteredTitle,
+      date: this.enteredDate,
+      description: this.enteredDescription
+    });
   }
 
 
