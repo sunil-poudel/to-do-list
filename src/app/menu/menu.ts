@@ -10,5 +10,8 @@ import {NewTask} from './new-task/new-task';
   styleUrl: './menu.css'
 })
 export class Menu {
-
+  addNewTaskFlag: boolean = false;
+  onClickAdd(){
+    this.addNewTaskFlag=true;
+  }
 }
