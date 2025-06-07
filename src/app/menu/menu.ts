@@ -22,6 +22,8 @@ export class Menu {
   }
   getSubmittedTask(submittedTask: TaskData){
     this.submittedTask = submittedTask;
+    // console.log(submittedTask);
+    this.sendSubmittedTaskToApp();
   }
 
   @Output() submittedTaskToApp = new EventEmitter<TaskData>();

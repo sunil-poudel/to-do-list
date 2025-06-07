@@ -22,11 +22,13 @@ export class NewTask {
 
   @Output() submittedTask = new EventEmitter<TaskData>();
   onSubmit(){
-    this.submittedTask.emit({
+    const task = {
       title: this.enteredTitle,
       date: this.enteredDate,
       description: this.enteredDescription
-    });
+    };
+    this.submittedTask.emit(task);
+    // console.log(task);
     this.onClickCancel();
   }
 
