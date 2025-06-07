@@ -9,8 +9,6 @@ import {TasksServices} from '../shared/tasks.services';
 })
 export class Tasks {
   private tasksServices = inject(TasksServices);
+  allTasks = this.tasksServices.getTasks();
 
-  getTasks(){
-    console.log(this.tasksServices.getTasks());
-  }
 }
