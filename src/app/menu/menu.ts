@@ -1,4 +1,4 @@
-import {Component, EventEmitter} from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {NewTask} from './new-task/new-task';
 
 @Component({
@@ -10,5 +10,9 @@ import {NewTask} from './new-task/new-task';
   styleUrl: './menu.css'
 })
 export class Menu {
+  displayFlag: boolean = false;
 
+  onClickAdd(){
+    this.displayFlag = true;
+  }
 }
