@@ -16,8 +16,16 @@ export class TasksServices{
     return this.tasks;
   }
 
+  getTaskById(id:number){
+    return this.tasks.find((task)=>task.id === id);
+  }
+
   currentTask?:{id:number, title:string, date:string, description:string};
   setCurrentTask(id:number){
     this.currentTask = this.tasks.find((task)=>task.id === id);
+    // console.log("current task set as "+this.currentTask?.title);
+  }
+  getCurrentTask(){
+    return this.currentTask?.id;
   }
 }

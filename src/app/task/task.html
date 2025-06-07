@@ -1,8 +1,12 @@
 <div  id="task_details">
-  <div id="task_heading">
+  <div (click)="getTask()" id="task_heading">
     <h1>Task Information</h1>
   </div>
   <div id="task">
-
+    @if(getTask()){
+      <div>{{currentTask?.title}}</div>
+      <div>{{currentTask?.date}}</div>
+      <div>{{currentTask?.description}}</div>
+    }
   </div>
 </div>
