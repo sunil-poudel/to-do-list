@@ -27,6 +27,7 @@ export class NewTask {
       date: this.enteredDate,
       description: this.enteredDescription
     });
+    this.onClickCancel();
   }
 
 
