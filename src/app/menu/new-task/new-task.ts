@@ -10,9 +10,17 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './new-task.css'
 })
 export class NewTask {
+  enteredTitle:string='';
+  enteredDate:string='';
+  enteredDescription:string='';
+
   @Output() displayFlag = new EventEmitter<boolean>();
   onClickCancel(){
     this.displayFlag.emit(false);
+  }
+
+  onSubmit(){
+
   }
 
 
