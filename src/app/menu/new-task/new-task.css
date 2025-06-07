@@ -1,3 +1,11 @@
+.backdrop{
+
+}
+dialog{
+  position: fixed;
+  top:30%;
+  right: 0;
+}
 dialog > form > p.actions{
   text-align: right;
 }
