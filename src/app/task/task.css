@@ -1,6 +1,7 @@
 div#task{
   border: 1px black solid;
   height: 300px;
+  overflow: scroll;
 }
 div#task_heading{
   text-align: center;
