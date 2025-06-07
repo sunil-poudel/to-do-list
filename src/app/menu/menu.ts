@@ -15,4 +15,7 @@ export class Menu {
   onClickAdd(){
     this.displayFlag = true;
   }
+  getDisplayFlag(displayFlag: boolean){
+    this.displayFlag = displayFlag;
+  }
 }

@@ -25,7 +25,7 @@
     </div>
 </div>
 @if(displayFlag){
-  <app-new-task></app-new-task>
+  <app-new-task (displayFlag) = getDisplayFlag($event)></app-new-task>
 }
 
 

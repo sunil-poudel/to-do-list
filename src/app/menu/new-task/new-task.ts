@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 @Component({
@@ -10,7 +10,10 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './new-task.css'
 })
 export class NewTask {
-  @Input() displayFlag!: boolean;
+  @Output() displayFlag = new EventEmitter<boolean>();
+  onClickCancel(){
+    this.displayFlag.emit(false);
+  }
 
 
 }
