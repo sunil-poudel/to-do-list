@@ -17,7 +17,7 @@ export class TasksServices{
   }
 
   currentTask?:{id:number, title:string, date:string, description:string};
-  getCurrentTask(id:number){
+  setCurrentTask(id:number){
     this.currentTask = this.tasks.find((task)=>task.id === id);
   }
 }

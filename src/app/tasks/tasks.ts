@@ -8,7 +8,7 @@ import {TasksServices} from '../shared/tasks.services';
   styleUrl: './tasks.css'
 })
 export class Tasks {
-  private tasksServices = inject(TasksServices);
+  protected tasksServices = inject(TasksServices);
   allTasks = this.tasksServices.getTasks();
 
 

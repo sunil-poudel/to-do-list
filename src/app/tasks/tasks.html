@@ -4,7 +4,7 @@
   </div>
   <div id="tasks_list">
     @for(task of allTasks; track task.id){
-      <div class="tasks">{{task.title}}</div>
+      <div class="tasks" (click)="tasksServices.setCurrentTask(task.id)">{{task.title}}</div>
     }
     @if(allTasks.length===0){
       <div class="tasks">Add a task to get started!</div>
