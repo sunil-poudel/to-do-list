@@ -15,6 +15,10 @@ div.tasks:hover{
   background-color: green;
   color: white;
 }
+div.tasks.selected{
+  background-color: blue;
+  color: white;
+}
 @media(max-width: 336px){
   div#tasks_list{
     margin-top: 60px;

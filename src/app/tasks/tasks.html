@@ -7,7 +7,7 @@
       <div class="tasks">Add a task to get started!</div>
     } @else {
       @for (task of allTasks; track task.id) {
-        <div class="tasks" (click)="setCurrentTask(task.id)">{{ task.title }}</div>
+        <div class="tasks"   [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
       }
     }
 

@@ -1,9 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {TasksServices} from '../shared/tasks.services';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-tasks',
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
@@ -14,6 +17,12 @@ export class Tasks {
   setCurrentTask(id: number){
     this.tasksServices.setCurrentTask(id);
     // console.log("set current task of id: "+id);
+  }
+
+  selectedTask: any = null;
+
+  selectTask(task: any) {
+    this.selectedTask = task;
   }
 
 }
