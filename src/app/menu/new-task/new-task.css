@@ -1,1 +1,8 @@
-
+dialog > form > p.actions{
+  text-align: right;
+}
+dialog > form > p.actions > button{
+  margin: 0 5px;
+  font-size: 10pt;
+  font-weight: bold;
+}
