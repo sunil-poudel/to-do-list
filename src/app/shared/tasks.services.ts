@@ -7,6 +7,7 @@ export class TasksServices{
     this.id++;
     const task = {id:this.id, title:taskData.title, date:taskData.date, description:taskData.description}
     this.tasks.push(task);
+    console.log(task);
   }
 
 }

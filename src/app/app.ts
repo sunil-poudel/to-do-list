@@ -6,6 +6,7 @@ import {Task} from './task/task';
 import {Menu} from './menu/menu';
 import {Footer} from './footer/footer';
 import {TaskData} from './shared/shared';
+import {TasksServices} from './shared/tasks.services';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,10 @@ import {TaskData} from './shared/shared';
 export class App {
   newlyAddedTask!: TaskData;
 
+  tasksServices: TasksServices = new TasksServices();
   getNewlyAddedTask(newlyAddedTask: TaskData){
     this.newlyAddedTask = newlyAddedTask;
-
+    this.tasksServices.addTask(newlyAddedTask);
     // console.log(this.newlyAddedTask);
   }
 }
