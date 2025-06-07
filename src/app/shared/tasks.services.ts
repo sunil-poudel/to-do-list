@@ -1,5 +1,7 @@
 import {TaskData} from './shared';
+import {Injectable} from '@angular/core';
 
+@Injectable({providedIn: "root"})
 export class TasksServices{
   private tasks: {id:number, title:string, date:string, description:string}[] = [];
   id: number = 0;
