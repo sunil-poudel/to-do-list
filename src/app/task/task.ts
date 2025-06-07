@@ -9,7 +9,5 @@ import {TasksServices} from '../shared/tasks.services';
 })
 export class Task {
   protected tasksServices = inject(TasksServices);
-  display(){
-    console.log(this.tasksServices.currentTask);
-  }
+
 }
