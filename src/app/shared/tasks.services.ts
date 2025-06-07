@@ -12,4 +12,7 @@ export class TasksServices{
     // console.log(task);
   }
 
+  getTasks(){
+    return this.tasks;
+  }
 }
