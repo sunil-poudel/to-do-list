@@ -6,8 +6,8 @@ export class TasksServices{
   addTask(taskData: TaskData){
     this.id++;
     const task = {id:this.id, title:taskData.title, date:taskData.date, description:taskData.description}
-    this.tasks.push(task);
-    console.log(task);
+    this.tasks.unshift(task);
+    // console.log(task);
   }
 
 }
