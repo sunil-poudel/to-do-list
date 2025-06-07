@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Header} from './header/header';
 import {Tasks} from './tasks/tasks';
@@ -17,7 +17,7 @@ import {TasksServices} from './shared/tasks.services';
 export class App {
   newlyAddedTask!: TaskData;
 
-  tasksServices: TasksServices = new TasksServices();
+  private tasksServices = inject(TasksServices);
   getNewlyAddedTask(newlyAddedTask: TaskData){
     this.newlyAddedTask = newlyAddedTask;
     this.tasksServices.addTask(newlyAddedTask);
