@@ -17,6 +17,7 @@ export class Tasks {
     return this.tasksServices.getTasks();
   }
 
+
   setCurrentTask(id: number){
     this.tasksServices.setCurrentTask(id);
     // console.log("set current task of id: "+id);

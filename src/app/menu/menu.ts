@@ -91,4 +91,7 @@ export class Menu {
     this.submittedTaskToApp.emit({taskData:this.submittedTask, isSave:this.isSave, isEdit: this.isEdit});
   }
 
+  getArchivedStatus(){
+    return this.tasksServices.getArchivedStatus();
+  }
 }

@@ -12,6 +12,10 @@ export class TasksServices{
     this.isArchived = isArchived;
   }
 
+  getArchivedStatus(){
+    return this.isArchived;
+  }
+
   id: number = 0;
   addTask(taskData: TaskData){
     this.id++;

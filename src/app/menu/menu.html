@@ -1,4 +1,5 @@
 <div id="menu_div">
+  @if(!getArchivedStatus()){
     <div class="menu" (click)="onClickAdd()">
       <p>Add</p>
       <img src="assets/text-document-add-icon.png" alt="add notes"/>
@@ -11,10 +12,12 @@
       <p>Mark complete</p>
       <img src="assets/double-tick-icon.png" alt="add notes"/>
     </div>
+  }
     <div class="menu">
       <p>Mark incomplete</p>
       <img src="assets/delete-file-icon.png" alt="add notes"/>
     </div>
+
     <div class="menu" (click)="onClickDelete()">
       <p>Delete</p>
       <img src="assets/hospital-trash-can-icon.png" alt="add notes"/>
