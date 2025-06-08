@@ -19,8 +19,13 @@ export class Menu {
   currentIndex?: number;
   currentTask?: {id: number; title: string; date: string; description:string};
 
+  isSave: boolean = false;
+  isEdit: boolean = true;
+
   onClickAdd(){
     this.displayFlag = true;
+    this.isSave = true;
+    this.isEdit = false;
   }
 
   onClickDelete(){
@@ -35,7 +40,12 @@ export class Menu {
   onClickEdit(){
     if(this.getCurrentTask()) {
       this.editDisplayFlag = true;
-      console.log(this.editDisplayFlag);
+      this.isEdit = true;
+      this.isSave = false;
+      // console.log(this.editDisplayFlag);
+    } else{
+      this.isEdit = false;
+      this.isSave = false;
     }
   }
 
@@ -64,9 +74,10 @@ export class Menu {
     this.sendSubmittedTaskToApp();
   }
 
-  @Output() submittedTaskToApp = new EventEmitter<TaskData>();
+
+  @Output() submittedTaskToApp  = new EventEmitter<{ taskData: TaskData, isSave:boolean, isEdit: boolean }>();
   sendSubmittedTaskToApp(){
-    this.submittedTaskToApp.emit(this.submittedTask);
+    this.submittedTaskToApp.emit({taskData:this.submittedTask, isSave:this.isSave, isEdit: this.isEdit});
   }
 
 }

@@ -17,6 +17,7 @@ export class NewTask {
 
   @Output() displayFlag = new EventEmitter<boolean>();
   @Output() editDisplayFlag = new EventEmitter<boolean>();
+
   onClickCancel(){
     this.displayFlag.emit(false);
     this.editDisplayFlag.emit(false);
