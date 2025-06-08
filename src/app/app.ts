@@ -20,7 +20,11 @@ export class App {
   private tasksServices = inject(TasksServices);
   getNewlyAddedTask(newlyAddedTask: TaskData){
     this.newlyAddedTask = newlyAddedTask;
-    this.tasksServices.addTask(newlyAddedTask);
+
+    this.addTask(newlyAddedTask);
     // console.log(this.newlyAddedTask);
+  }
+  addTask(newlyAddedTask: TaskData){
+    this.tasksServices.addTask(newlyAddedTask);
   }
 }
