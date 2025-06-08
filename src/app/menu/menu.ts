@@ -35,6 +35,7 @@ export class Menu {
   onClickEdit(){
     if(this.getCurrentTask()) {
       this.editDisplayFlag = true;
+      console.log(this.editDisplayFlag);
     }
   }
 

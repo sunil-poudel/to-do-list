@@ -25,7 +25,7 @@
     </div>
 </div>
 @if(displayFlag){
-  <app-new-task enteredTitle = {{}} (displayFlag) = getDisplayFlag($event) (submittedTask)="getSubmittedTask($event)"></app-new-task>
+  <app-new-task (displayFlag) = getDisplayFlag($event) (submittedTask)="getSubmittedTask($event)"></app-new-task>
 }
 @if(editDisplayFlag){
   <app-new-task

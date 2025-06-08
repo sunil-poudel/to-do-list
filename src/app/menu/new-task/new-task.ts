@@ -20,7 +20,6 @@ export class NewTask {
   onClickCancel(){
     this.displayFlag.emit(false);
     this.editDisplayFlag.emit(false);
-
   }
 
   @Output() submittedTask = new EventEmitter<TaskData>();
