@@ -31,7 +31,7 @@ export class Menu {
   }
 
   onClickEdit(){
-
+    this.displayFlag = true;
   }
   getDisplayFlag(displayFlag: boolean){
     this.displayFlag = displayFlag;

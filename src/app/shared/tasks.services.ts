@@ -33,7 +33,12 @@ export class TasksServices{
     this.tasks = this.tasks.filter((task)=> task.id != id);
   }
 
-  editTask(taskData: TaskData){
-
+  editTask(id: number, taskData: TaskData){
+    const task = this.getTaskById(id);
+    if(task) {
+      task.title = taskData.title;
+      task.date = taskData.date;
+      task.description = taskData.description;
+    }
   }
 }
