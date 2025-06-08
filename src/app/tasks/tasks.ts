@@ -28,15 +28,13 @@ export class Tasks {
   }
 
   selectedTask: any = null;
-  selectedArchiveTask: any = null;
 
   selectTask(task: any) {
     this.selectedTask = task;
   }
-  selectArchiveTask(task: any) {
-    this.selectedArchiveTask = task;
+
+
+  onClick() {
+    console.log("Clicked id: "+this.tasksServices.getCurrentTask())
   }
-
-
-
 }

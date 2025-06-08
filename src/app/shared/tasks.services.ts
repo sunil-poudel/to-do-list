@@ -37,16 +37,12 @@ export class TasksServices{
   }
 
   getTaskById(id:number){
-    return this.tasks.find((task)=>task.id === id);
+    return this.getTasks().find((task)=>task.id === id);
   }
-  getArchivedTaskById(id:number){
-      return this.archivedTasks.find((task)=>task.id === id);
-    }
-
   currentTask?:{id:number, title:string, date:string, description:string};
 
   setCurrentTask(id:number){
-    this.currentTask = this.tasks.find((task)=>task.id === id);
+    this.currentTask = this.getTasks().find((task)=>task.id === id);
     // console.log("current task set as "+this.currentTask?.title);
   }
 

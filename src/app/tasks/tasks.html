@@ -12,7 +12,7 @@
     } @else {
 <!--      @if(!getArchivedStatus()){-->
         @for (task of getAllTasks(); track task.id) {
-          <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
+            <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task); onClick()">{{ task.title }}</div>
 <!--        }-->
       }
     }
