@@ -13,6 +13,10 @@ import {NgClass} from '@angular/common';
 export class Tasks {
   protected tasksServices = inject(TasksServices);
 
+  getArchivedStatus(){
+    return this.tasksServices.getArchivedStatus();
+  }
+
   getAllTasks(){
     return this.tasksServices.getTasks();
   }
