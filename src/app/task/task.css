@@ -19,6 +19,7 @@ div#task > hr{
 div#taskDescription{
   margin-top: 3%;
   padding: 1rem;
+  font-size: 18pt;
 }
 
 div#noTasks{

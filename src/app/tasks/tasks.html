@@ -3,11 +3,11 @@
     <h1>My tasks</h1>
   </div>
   <div id="tasks_list">
-    @if (allTasks.length === 0) {
+    @if (getAllTasks().length === 0) {
       <div class="tasks">Add a task from option below to get started!</div>
     } @else {
-      @for (task of allTasks; track task.id) {
-        <div class="tasks"   [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
+      @for (task of getAllTasks(); track task.id) {
+        <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
       }
     }
 

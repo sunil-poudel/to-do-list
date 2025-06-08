@@ -12,7 +12,10 @@ import {NgClass} from '@angular/common';
 })
 export class Tasks {
   protected tasksServices = inject(TasksServices);
-  allTasks = this.tasksServices.getTasks();
+
+  getAllTasks(){
+    return this.tasksServices.getTasks();
+  }
 
   setCurrentTask(id: number){
     this.tasksServices.setCurrentTask(id);

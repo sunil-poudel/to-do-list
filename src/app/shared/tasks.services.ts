@@ -29,7 +29,7 @@ export class TasksServices{
     return this.currentTask?.id;
   }
 
-    // deleteTask(id: number){
-    //   this.tasks = this.tasks.filter((task)=> task.id = id);
-    // }
+    deleteTask(id: number){
+      this.tasks = this.tasks.filter((task)=> task.id != id);
+    }
 }

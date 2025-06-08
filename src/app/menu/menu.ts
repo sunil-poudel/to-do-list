@@ -14,22 +14,23 @@ import {TasksServices} from '../shared/tasks.services';
 export class Menu {
   displayFlag: boolean = false;
   submittedTask!: TaskData;
-  // protected tasksServices = inject(TasksServices);
-  // currentIndex?: number;
+  protected tasksServices = inject(TasksServices);
+  currentIndex?: number;
 
   onClickAdd(){
     this.displayFlag = true;
   }
 
-  // onClickDelete(){
-  //   this.currentIndex = this.tasksServices.getCurrentTask();
-  //   if(this.currentIndex != undefined){
-  //     this.tasksServices.deleteTask(this.currentIndex);
-  //     console.log("deleted task with id: "+this.currentIndex);
-  //   } else{
-  //     console.log("no task selected to delete!");
-  //   }
-  // }
+  onClickDelete(){
+    this.currentIndex = this.tasksServices.getCurrentTask();
+    if(this.currentIndex != undefined){
+      this.tasksServices.deleteTask(this.currentIndex);
+      console.log("deleted task with id: "+this.currentIndex);
+      console.log("remaining tasks:\n "+ this.tasksServices.getTasks().length);
+    } else{
+      console.log("no task selected to delete!");
+    }
+  }
   getDisplayFlag(displayFlag: boolean){
     this.displayFlag = displayFlag;
   }
