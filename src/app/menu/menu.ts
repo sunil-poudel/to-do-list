@@ -94,4 +94,7 @@ export class Menu {
   getArchivedStatus(){
     return this.tasksServices.getArchivedStatus();
   }
+  onClickBack(){
+    this.tasksServices.flipArchived();
+  }
 }

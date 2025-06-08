@@ -12,6 +12,10 @@ export class TasksServices{
     this.isArchived = isArchived;
   }
 
+  flipArchived(){
+    this.isArchived = !this.isArchived;
+  }
+
   getArchivedStatus(){
     return this.isArchived;
   }
