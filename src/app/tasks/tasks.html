@@ -1,6 +1,10 @@
 <div id="tasks_div">
   <div id="tasks_heading">
-    <h1>My tasks</h1>
+    @if(getArchivedStatus()){
+    <h1>Archived</h1>
+    } @else {
+      <h1>My tasks</h1>
+    }
   </div>
   <div id="tasks_list">
     @if (getAllTasks().length === 0) {
