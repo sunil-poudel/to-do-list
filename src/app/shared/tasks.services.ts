@@ -28,4 +28,8 @@ export class TasksServices{
   getCurrentTask(){
     return this.currentTask?.id;
   }
+
+    // deleteTask(id: number){
+    //   this.tasks = this.tasks.filter((task)=> task.id = id);
+    // }
 }

@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Output, inject} from '@angular/core';
 import {NewTask} from './new-task/new-task';
 import {TaskData} from '../shared/shared'
+import {TasksServices} from '../shared/tasks.services';
 
 @Component({
   selector: 'app-menu',
@@ -13,10 +14,22 @@ import {TaskData} from '../shared/shared'
 export class Menu {
   displayFlag: boolean = false;
   submittedTask!: TaskData;
+  // protected tasksServices = inject(TasksServices);
+  // currentIndex?: number;
 
   onClickAdd(){
     this.displayFlag = true;
   }
+
+  // onClickDelete(){
+  //   this.currentIndex = this.tasksServices.getCurrentTask();
+  //   if(this.currentIndex != undefined){
+  //     this.tasksServices.deleteTask(this.currentIndex);
+  //     console.log("deleted task with id: "+this.currentIndex);
+  //   } else{
+  //     console.log("no task selected to delete!");
+  //   }
+  // }
   getDisplayFlag(displayFlag: boolean){
     this.displayFlag = displayFlag;
   }
