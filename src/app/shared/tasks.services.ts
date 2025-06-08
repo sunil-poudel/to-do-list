@@ -77,6 +77,7 @@ export class TasksServices{
     const taskTemp = this.archivedTasks.find((task)=> task.id === id);
     if(taskTemp){
       this.tasks.push(taskTemp);
+      this.tasks = this.tasks.sort((a,b)=>b.id-a.id);
       this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
     }
   }
