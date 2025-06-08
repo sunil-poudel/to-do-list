@@ -51,6 +51,7 @@ export class TasksServices{
 
   deleteTask(id: number){
     this.tasks = this.tasks.filter((task)=> task.id != id);
+    this.currentTask = undefined;
   }
 
   editTask(id: number, taskData: TaskData){
@@ -66,5 +67,10 @@ export class TasksServices{
     this.archivedTasks = this.tasks.filter((task)=>task.id==id);
     this.deleteTask(id);
     console.log("archived task of id: "+id);
+    this.currentTask = undefined;
+  }
+
+  resetCurrentTask(){
+    this.currentTask = undefined;
   }
 }

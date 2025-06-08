@@ -27,4 +27,8 @@ export class Task {
       return undefined;
     }
   }
+
+  onClick(){
+    console.log(this.currentId);
+  }
 }
