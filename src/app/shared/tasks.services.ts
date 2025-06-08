@@ -73,4 +73,12 @@ export class TasksServices{
     }
   }
 
+  markTaskIncomplete(id: number){
+    const taskTemp = this.archivedTasks.find((task)=> task.id === id);
+    if(taskTemp){
+      this.tasks.push(taskTemp);
+      this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
+    }
+  }
+
 }

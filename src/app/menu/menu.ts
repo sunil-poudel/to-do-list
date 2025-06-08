@@ -59,6 +59,12 @@ export class Menu {
       this.tasksServices.archiveTask(id);
     }
   }
+  onClickMarkIncomplete(){
+    const id = this.tasksServices.getCurrentTask();
+    if(id){
+      this.tasksServices.markTaskIncomplete(id);
+    }
+  }
 
   getCurrentIndex(){
     this.currentIndex = this.tasksServices.getCurrentTask();

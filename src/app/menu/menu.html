@@ -13,7 +13,7 @@
       <img src="assets/double-tick-icon.png" alt="mark complete"/>
     </div>
   } @else if(getArchivedStatus()){
-    <div class="menu">
+    <div class="menu" (click)="onClickMarkIncomplete()">
       <p>Mark incomplete</p>
       <img src="assets/delete-file-icon.png" alt="mark incomplete"/>
     </div>
