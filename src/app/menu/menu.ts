@@ -28,6 +28,10 @@ export class Menu {
     this.isEdit = false;
   }
 
+  onClickArchives(){
+    this.tasksServices.setArchived(true);
+  }
+
   onClickDelete(){
     this.getCurrentIndex();
     if(this.currentIndex != undefined){

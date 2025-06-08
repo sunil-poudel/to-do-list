@@ -6,6 +6,12 @@ export class TasksServices{
   private tasks: {id:number, title:string, date:string, description:string}[] = [];
   private archivedTasks: {id:number, title:string, date:string, description:string}[] = [];
 
+  isArchived:boolean = false;
+
+  setArchived(isArchived:boolean){
+    this.isArchived = isArchived;
+  }
+
   id: number = 0;
   addTask(taskData: TaskData){
     this.id++;
@@ -15,7 +21,11 @@ export class TasksServices{
   }
 
   getTasks(){
-    return this.tasks;
+    if(this.isArchived){
+      return this.archivedTasks;
+    } else {
+      return this.tasks;
+    }
   }
 
   getTaskById(id:number){
