@@ -49,6 +49,13 @@ export class Menu {
     }
   }
 
+  onClickMarkComplete(){
+    const id = this.tasksServices.getCurrentTask();
+    if(id){
+      this.tasksServices.archiveTask(id);
+    }
+  }
+
   getCurrentIndex(){
     this.currentIndex = this.tasksServices.getCurrentTask();
   }
