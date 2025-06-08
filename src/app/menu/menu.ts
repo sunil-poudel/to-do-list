@@ -29,6 +29,10 @@ export class Menu {
       // console.log("remaining tasks:\n "+ this.tasksServices.getTasks().length);
     }
   }
+
+  onClickEdit(){
+
+  }
   getDisplayFlag(displayFlag: boolean){
     this.displayFlag = displayFlag;
   }
