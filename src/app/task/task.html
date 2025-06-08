@@ -6,6 +6,7 @@
     @if(getTask()){
       <div id="taskTitle">{{currentTask?.title}}</div>
       <div id="taskDate">{{currentTask?.date}}</div>
+      <hr/>
       <div id="taskDescription">{{currentTask?.description}}</div>
     } @else{
       <div id="noTasks">Click on the task to the left to view it.</div>
