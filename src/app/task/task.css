@@ -1,7 +1,15 @@
 div#task{
+  box-sizing: border-box;
   border: 1px black solid;
   height: 300px;
   overflow: scroll;
+  font-family: "Special Elite", system-ui;
+}
+div#noTasks{
+  padding: 30px;
+  font-size: 20pt;
+  margin: 20px auto;
+  text-align: center;
 }
 div#task_heading{
   text-align: center;
