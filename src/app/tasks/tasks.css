@@ -20,6 +20,10 @@ div.tasks.selected{
   background-color: blue;
   color: white;
 }
+div.tasks.selectedArchive{
+  background-color: red;
+  color: white;
+}
 @media(max-width: 336px){
   div#tasks_list{
     margin-top: 60px;

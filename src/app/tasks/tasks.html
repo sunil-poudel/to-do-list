@@ -10,8 +10,14 @@
         <div class="tasks">Add a task from option below to get started!</div>
       }
     } @else {
-      @for (task of getAllTasks(); track task.id) {
-        <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
+      @if(!getArchivedStatus()){
+        @for (task of getAllTasks(); track task.id) {
+          <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task)">{{ task.title }}</div>
+        }
+      } @else{
+        @for (task of getAllTasks(); track task.id) {
+          <div class="tasks" [ngClass]="{'selectedArchive': selectedArchiveTask === task}" (click)="setCurrentTask(task.id); selectArchiveTask(task)">{{ task.title }}</div>
+        }
       }
     }
 

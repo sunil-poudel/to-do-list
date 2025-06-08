@@ -18,7 +18,6 @@ export class Tasks {
   }
 
   getAllTasks(){
-
     return this.tasksServices.getTasks();
   }
 
@@ -29,9 +28,13 @@ export class Tasks {
   }
 
   selectedTask: any = null;
+  selectedArchiveTask: any = null;
 
   selectTask(task: any) {
     this.selectedTask = task;
+  }
+  selectArchiveTask(task: any) {
+    this.selectedArchiveTask = task;
   }
 
 
