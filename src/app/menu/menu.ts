@@ -25,10 +25,8 @@ export class Menu {
     this.currentIndex = this.tasksServices.getCurrentTask();
     if(this.currentIndex != undefined){
       this.tasksServices.deleteTask(this.currentIndex);
-      console.log("deleted task with id: "+this.currentIndex);
-      console.log("remaining tasks:\n "+ this.tasksServices.getTasks().length);
-    } else{
-      console.log("no task selected to delete!");
+      // console.log("deleted task with id: "+this.currentIndex);
+      // console.log("remaining tasks:\n "+ this.tasksServices.getTasks().length);
     }
   }
   getDisplayFlag(displayFlag: boolean){
