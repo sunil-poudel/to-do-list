@@ -26,10 +26,6 @@ export class Tasks {
     this.tasksServices.setCurrentTask(id);
     // console.log("set current task of id: "+id);
   }
-  setCurrentArchivedTask(id: number){
-    this.tasksServices.setCurrentArchivedTask(id);
-    // console.log("set current task of id: "+id);
-  }
 
   selectedTask: any = null;
   selectedArchiveTask: any = null;
