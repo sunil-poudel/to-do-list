@@ -16,7 +16,7 @@
         }
       } @else{
         @for (task of getAllTasks(); track task.id) {
-          <div class="tasks" [ngClass]="{'selectedArchive': selectedArchiveTask === task}" (click)="setCurrentTask(task.id); selectArchiveTask(task)">{{ task.title }}</div>
+          <div class="tasks" [ngClass]="{'selectedArchive': selectedArchiveTask === task}" (click)="setCurrentArchivedTask(task.id); selectArchiveTask(task)">{{ task.title }}</div>
         }
       }
     }

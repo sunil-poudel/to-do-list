@@ -2,13 +2,19 @@
   <div (click)="getTask()" id="task_heading">
     <h1>Task Information</h1>
   </div>
-  <div id="task" (click)="onClick()">
+  <div id="task" >
     @if(getTask()){
-      <div id="taskTitle">{{currentTask?.title}}</div>
-      <div id="taskDate">{{currentTask?.date}}</div>
+      <div class="taskTitle">{{currentTask?.title}}</div>
+      <div class="taskDate">{{currentTask?.date}}</div>
       <hr/>
-      <div id="taskDescription">{{currentTask?.description}}</div>
-    } @else{
+      <div class="taskDescription">{{currentTask?.description}}</div>
+    } @else if (getArchivedTask()){
+      <div class="taskTitle">{{currentArchivedTask?.title}}</div>
+      <div class="taskDate">{{currentArchivedTask?.date}}</div>
+      <hr/>
+      <div class="taskDescription">{{currentArchivedTask?.description}}</div>
+    }
+    @else{
       <div id="noTasks">Click on the task to the left to view it.</div>
     }
   </div>

@@ -8,7 +8,7 @@ div#task{
   font-family: "Edu VIC WA NT Hand", cursive;
 
 }
-div#taskTitle{
+div.taskTitle{
   margin-top: 3%;
   font-weight: bold;
   font-size: 18pt;
@@ -16,7 +16,7 @@ div#taskTitle{
 div#task > hr{
   width: 80%;
 }
-div#taskDescription{
+div.taskDescription{
   margin-top: 3%;
   padding: 1rem;
   font-size: 18pt;

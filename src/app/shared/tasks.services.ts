@@ -39,15 +39,29 @@ export class TasksServices{
   getTaskById(id:number){
     return this.tasks.find((task)=>task.id === id);
   }
+  getArchivedTaskById(id:number){
+      return this.archivedTasks.find((task)=>task.id === id);
+    }
 
   currentTask?:{id:number, title:string, date:string, description:string};
+  currentArchivedTask?:{id:number, title:string, date:string, description:string};
+
   setCurrentTask(id:number){
     this.currentTask = this.tasks.find((task)=>task.id === id);
     // console.log("current task set as "+this.currentTask?.title);
   }
+  setCurrentArchivedTask(id:number){
+    this.currentArchivedTask = this.archivedTasks.find((task)=>task.id === id);
+    // console.log("current task set as "+this.currentTask?.title);
+  }
+
   getCurrentTask(){
     return this.currentTask?.id;
   }
+  getCurrentArchivedTask(){
+    return this.currentTask?.id;
+  }
+
 
   deleteTask(id: number){
     this.tasks = this.tasks.filter((task)=> task.id != id);
@@ -70,7 +84,4 @@ export class TasksServices{
     }
   }
 
-  resetCurrentTask(){
-    this.currentTask = undefined;
-  }
 }
