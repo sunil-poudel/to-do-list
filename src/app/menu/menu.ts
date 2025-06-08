@@ -13,16 +13,18 @@ import {TasksServices} from '../shared/tasks.services';
 })
 export class Menu {
   displayFlag: boolean = false;
+  editDisplayFlag: boolean = false;
   submittedTask!: TaskData;
   protected tasksServices = inject(TasksServices);
   currentIndex?: number;
+  currentTask?: {id: number; title: string; date: string; description:string};
 
   onClickAdd(){
     this.displayFlag = true;
   }
 
   onClickDelete(){
-    this.currentIndex = this.tasksServices.getCurrentTask();
+    this.getCurrentIndex();
     if(this.currentIndex != undefined){
       this.tasksServices.deleteTask(this.currentIndex);
       // console.log("deleted task with id: "+this.currentIndex);
@@ -31,11 +33,30 @@ export class Menu {
   }
 
   onClickEdit(){
-    this.displayFlag = true;
+    if(this.getCurrentTask()) {
+      this.editDisplayFlag = true;
+    }
   }
+
+  getCurrentIndex(){
+    this.currentIndex = this.tasksServices.getCurrentTask();
+  }
+  getCurrentTask(){
+    this.getCurrentIndex();
+    if(this.currentIndex != undefined) {
+      this.currentTask = this.tasksServices.getTaskById(this.currentIndex);
+    }
+    return this.currentTask;
+  }
+
+
   getDisplayFlag(displayFlag: boolean){
     this.displayFlag = displayFlag;
   }
+  getEditDisplayFlag(editDisplayFlag: boolean){
+    this.editDisplayFlag = editDisplayFlag;
+  }
+
   getSubmittedTask(submittedTask: TaskData){
     this.submittedTask = submittedTask;
     // console.log(submittedTask);
@@ -46,4 +67,5 @@ export class Menu {
   sendSubmittedTaskToApp(){
     this.submittedTaskToApp.emit(this.submittedTask);
   }
+
 }

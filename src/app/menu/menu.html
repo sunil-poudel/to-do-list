@@ -25,7 +25,16 @@
     </div>
 </div>
 @if(displayFlag){
-  <app-new-task (displayFlag) = getDisplayFlag($event) (submittedTask)="getSubmittedTask($event)"></app-new-task>
+  <app-new-task enteredTitle = {{}} (displayFlag) = getDisplayFlag($event) (submittedTask)="getSubmittedTask($event)"></app-new-task>
+}
+@if(editDisplayFlag){
+  <app-new-task
+    enteredTitle = "{{getCurrentTask()?.title}}"
+    enteredDate = "{{getCurrentTask()?.date}}"
+    enteredDescription = "{{getCurrentTask()?.description}}"
+    (editDisplayFlag) = getEditDisplayFlag($event)
+    (submittedTask)="getSubmittedTask($event)"
+  ></app-new-task>
 }
 
 

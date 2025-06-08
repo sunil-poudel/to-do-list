@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TaskData} from '../../shared/shared';
 
@@ -11,13 +11,16 @@ import {TaskData} from '../../shared/shared';
   styleUrl: './new-task.css'
 })
 export class NewTask {
-  enteredTitle:string='';
-  enteredDate:string='';
-  enteredDescription:string='';
+  @Input() enteredTitle:string='';
+  @Input() enteredDate:string='';
+  @Input() enteredDescription:string='';
 
   @Output() displayFlag = new EventEmitter<boolean>();
+  @Output() editDisplayFlag = new EventEmitter<boolean>();
   onClickCancel(){
     this.displayFlag.emit(false);
+    this.editDisplayFlag.emit(false);
+
   }
 
   @Output() submittedTask = new EventEmitter<TaskData>();
@@ -31,6 +34,5 @@ export class NewTask {
     // console.log(task);
     this.onClickCancel();
   }
-
 
 }
