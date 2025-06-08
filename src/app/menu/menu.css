@@ -3,8 +3,8 @@ div#menu_div{
   /*border: black solid 3px;*/
   width: 50%;
   margin: 10px auto;
-
   gap: 20px;
+  justify-content: center;
 }
 div.menu{
   border: 1px black solid;
