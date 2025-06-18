@@ -1,5 +1,5 @@
 import {TaskData} from './shared';
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: "root"})
@@ -10,13 +10,42 @@ export class TasksServices{
 
   private httpClient = inject(HttpClient);
 
+  // //to fetch data from backend right at the start when this component becomes available
+  // ngOnInit() {
+  //   this.httpClient.get<
+  //     {id:number, title:string, date:string, description:string}
+  //   >("http://localhost:8080/apis/tasks").subscribe(
+  //     {
+  //       next: (resData) => {
+  //         if(resData) {
+  //           console.log(resData.title);
+  //         } else {
+  //           console.log("Hello!");
+  //         }
+  //       }
+  //     }
+  //   );
+  // }
+
   constructor(){
     const tasks = localStorage.getItem('tasks');
-
 
     if(tasks){
       this.tasks = JSON.parse(tasks);
     }
+
+    //to fetch data from backend right at the start when this component becomes available
+    this.httpClient.get("http://localhost:8080/apis/tasks").subscribe(
+      {
+        next: (resData) => {
+          if(resData) {
+            console.log(resData);
+          } else {
+            console.log("Hello!");
+          }
+        }
+      }
+    );
   }
 
   private saveTask(){
