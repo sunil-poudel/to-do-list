@@ -10,22 +10,6 @@ export class TasksServices{
 
   private httpClient = inject(HttpClient);
 
-  // //to fetch data from backend right at the start when this component becomes available
-  // ngOnInit() {
-  //   this.httpClient.get<
-  //     {id:number, title:string, date:string, description:string}
-  //   >("http://localhost:8080/apis/tasks").subscribe(
-  //     {
-  //       next: (resData) => {
-  //         if(resData) {
-  //           console.log(resData.title);
-  //         } else {
-  //           console.log("Hello!");
-  //         }
-  //       }
-  //     }
-  //   );
-  // }
 
   constructor(){
     const tasks = localStorage.getItem('tasks');
@@ -35,17 +19,19 @@ export class TasksServices{
     }
 
     //to fetch data from backend right at the start when this component becomes available
-    this.httpClient.get("http://localhost:8080/apis/tasks").subscribe(
+    this.httpClient.get<
+      {id:number, title:string, date:string, description:string}
+    >("http://localhost:8080/apis/tasks").subscribe(
       {
-        next: (resData) => {
-          if(resData) {
-            console.log(resData);
-          } else {
-            console.log("Hello!");
-          }
+        next: (task)=>{
+          this.taskFromDatabase.push(task);
+          console.log(task);
         }
       }
     );
+    console.log("tasks from database are: ");
+    console.log(this.taskFromDatabase);
+    console.log("tasks from database loaded successfully.");
   }
 
   private saveTask(){
