@@ -1,10 +1,14 @@
 import {TaskData} from './shared';
-import {Injectable} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: "root"})
 export class TasksServices{
   private tasks: {id:number, title:string, date:string, description:string}[] = [];
   private archivedTasks: {id:number, title:string, date:string, description:string}[] = [];
+  private taskFromDatabase: {id:number, title:string, date:string, description:string}[] = [];
+
+  private httpClient = inject(HttpClient);
 
   constructor(){
     const tasks = localStorage.getItem('tasks');
