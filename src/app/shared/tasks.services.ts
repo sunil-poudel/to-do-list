@@ -25,13 +25,13 @@ export class TasksServices{
       {
         next: (task)=>{
           this.taskFromDatabase.push(task);
-          console.log(task);
+          // console.log(task);
         }
       }
     );
-    console.log("tasks from database are: ");
-    console.log(this.taskFromDatabase);
-    console.log("tasks from database loaded successfully.");
+    // console.log("tasks from database are: ");
+    // console.log(this.taskFromDatabase);
+    // console.log("tasks from database loaded successfully.");
   }
 
   private saveTask(){
