@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: "root"})
 export class TasksServices{
-  private tasks: {title:string, date:string, description:string}[] = [];
+  private tasks: {id: number, title:string, date:string, description:string}[] = [];
   private archivedTasks: {id:number, title:string, date:string, description:string}[] = [];
   private taskFromDatabase: {id:number, title:string, date:string, description:string}[] = [];
 
@@ -31,8 +31,7 @@ export class TasksServices{
   }
 
   addTask(taskData: TaskData){
-    // const task = {title:taskData.title, date:taskData.date, description:taskData.description};
-    this.tasks.unshift(taskData);
+    // this.tasks.unshift(taskData);
     this.postTaskToBackend(taskData);
   }
 
