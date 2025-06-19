@@ -46,6 +46,12 @@ export class TasksServices{
     this.id++;
     const task = {id:this.id, title:taskData.title, date:taskData.date, description:taskData.description}
     this.tasks.unshift(task);
+
+    this.httpClient.post<{id: number, title: string, date: string, description: string}>("http://localhost:8080/apis/tasks", task).subscribe(
+      {
+        next: (response)=>console.log("added task: ",response)
+      }
+    );
   }
 
   getTasks(){
