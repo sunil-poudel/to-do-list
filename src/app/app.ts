@@ -7,6 +7,7 @@ import {Menu} from './menu/menu';
 import {Footer} from './footer/footer';
 import {TaskData} from './shared/shared';
 import {TasksServices} from './shared/tasks.services';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
