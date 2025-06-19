@@ -30,6 +30,7 @@ export class DummyTasksServices{
         }
       }
     );
+    return this.tasks;
   }
 
   postTaskToBackend(task: TaskData){
