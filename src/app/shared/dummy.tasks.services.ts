@@ -44,7 +44,8 @@ export class DummyTasksServices{
     );
   }
 
-  putTaskToBackend(id:number, task:TaskData){
+  putTaskToBackend(id:number, taskData:TaskData){
+    const task = {id:id, title:taskData.title, date: taskData.date, description: taskData.description};
     this.httpClient.put<{id: number, title:string, date:string, description:string}>("http://localhost:8080/apis/tasks", task).subscribe(
       {
           next: (response) => {console.log("updated task: ", response)}
