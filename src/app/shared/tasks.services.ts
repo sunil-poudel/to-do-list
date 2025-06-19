@@ -12,11 +12,6 @@ export class TasksServices{
 
 
   constructor(){
-    const tasks = localStorage.getItem('tasks');
-
-    if(tasks){
-      this.tasks = JSON.parse(tasks);
-    }
 
     //to fetch data from backend right at the start when this component becomes available
     this.httpClient.get<
@@ -29,17 +24,12 @@ export class TasksServices{
         }
       }
     );
-    // console.log("tasks from database are: ");
-    // console.log(this.taskFromDatabase);
-    // console.log("tasks from database loaded successfully.");
+    console.log("tasks from database are: ");
+    console.log(this.taskFromDatabase);
+    console.log("tasks from database loaded successfully.");
   }
 
-  private saveTask(){
-    // set item with key 'tasks', which is the key we're looking
-    //while retrieving task in constructor.
-    //convert to json string to store task.
-    localStorage.setItem('tasks', JSON.stringify(this.tasks));
-  }
+
   isArchived:boolean = false;
 
   setArchived(isArchived:boolean){
@@ -59,8 +49,6 @@ export class TasksServices{
     this.id++;
     const task = {id:this.id, title:taskData.title, date:taskData.date, description:taskData.description}
     this.tasks.unshift(task);
-    this.saveTask();
-    // console.log(task);
   }
 
   getTasks(){
@@ -79,19 +67,16 @@ export class TasksServices{
   setCurrentTask(id:number){
     this.currentTask = this.getTasks().find((task)=>task.id === id);
     // console.log("current task set as "+this.currentTask?.title);
-    this.saveTask();
   }
 
 
   getCurrentTask(){
-    this.saveTask();
     return this.currentTask?.id;
   }
 
 
   deleteTask(id: number){
     this.tasks = this.tasks.filter((task)=> task.id != id);
-    this.saveTask();
   }
 
   editTask(id: number, taskData: TaskData){
@@ -101,7 +86,6 @@ export class TasksServices{
       task.date = taskData.date;
       task.description = taskData.description;
     }
-    this.saveTask();
   }
 
   archiveTask(id: number){
@@ -109,7 +93,6 @@ export class TasksServices{
     if(taskTemp) {
       this.archivedTasks.unshift(taskTemp);
       this.deleteTask(id);
-      this.saveTask();
     }
   }
 
@@ -119,7 +102,6 @@ export class TasksServices{
       this.tasks.push(taskTemp);
       this.tasks = this.tasks.sort((a,b)=>b.id-a.id);
       this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
-      this.saveTask();
     }
   }
 
