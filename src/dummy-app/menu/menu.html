@@ -1,0 +1,24 @@
+<div id="menu_div">
+    <div class="menu" (click)="onClickAdd()">
+      <p>Add</p>
+      <img src="assets/text-document-add-icon.png" alt="add notes"/>
+    </div>
+    <div class="menu" (click)="onClickEdit()">
+      <p>Edit</p>
+      <img src="assets/edit-document-icon.png" alt="edit notes"/>
+    </div>
+</div>
+@if(displayFlag){
+  <app-new-task (displayFlag) = getDisplayFlag($event) (submittedTask)="getSubmittedTask($event)"></app-new-task>
+}
+@if(editDisplayFlag){
+  <app-new-task
+    enteredTitle = "{{getCurrentTask()?.title}}"
+    enteredDate = "{{getCurrentTask()?.date}}"
+    enteredDescription = "{{getCurrentTask()?.description}}"
+    (editDisplayFlag) = getEditDisplayFlag($event)
+    (submittedTask)="getSubmittedTask($event)"
+  ></app-new-task>
+}
+
+
