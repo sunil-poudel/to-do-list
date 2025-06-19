@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: "root"})
 export class TasksServices{
-  private tasks: {id:number, title:string, date:string, description:string}[] = [];
+  private tasks: {title:string, date:string, description:string}[] = [];
   private archivedTasks: {id:number, title:string, date:string, description:string}[] = [];
   private taskFromDatabase: {id:number, title:string, date:string, description:string}[] = [];
 
@@ -41,13 +41,11 @@ export class TasksServices{
     return this.isArchived;
   }
 
-  id: number = 0;
   addTask(taskData: TaskData){
-    this.id++;
-    const task = {id:this.id, title:taskData.title, date:taskData.date, description:taskData.description}
+    const task = {title:taskData.title, date:taskData.date, description:taskData.description};
     this.tasks.unshift(task);
 
-    this.httpClient.post<{id: number, title: string, date: string, description: string}>("http://localhost:8080/apis/tasks", task).subscribe(
+    this.httpClient.post<{title: string, date: string, description: string}>("http://localhost:8080/apis/tasks", task).subscribe(
       {
         next: (response)=>console.log("added task: ",response)
       }
@@ -62,15 +60,15 @@ export class TasksServices{
     }
   }
 
-  getTaskById(id:number){
-    return this.getTasks().find((task)=>task.id === id);
-  }
+  // getTaskById(id:number){
+  //   return this.getTasks().find((task)=>task.id === id);
+  // }
   currentTask?:{id:number, title:string, date:string, description:string};
 
-  setCurrentTask(id:number){
-    this.currentTask = this.getTasks().find((task)=>task.id === id);
-    // console.log("current task set as "+this.currentTask?.title);
-  }
+  // setCurrentTask(id:number){
+  //   this.currentTask = this.getTasks().find((task)=>task.id === id);
+  //   // console.log("current task set as "+this.currentTask?.title);
+  // }
 
 
   getCurrentTask(){
@@ -78,34 +76,34 @@ export class TasksServices{
   }
 
 
-  deleteTask(id: number){
-    this.tasks = this.tasks.filter((task)=> task.id != id);
-  }
+  // deleteTask(id: number){
+  //   this.tasks = this.tasks.filter((task)=> task.id != id);
+  // }
 
-  editTask(id: number, taskData: TaskData){
-    const task = this.getTaskById(id);
-    if(task) {
-      task.title = taskData.title;
-      task.date = taskData.date;
-      task.description = taskData.description;
-    }
-  }
+  // editTask(id: number, taskData: TaskData){
+  //   const task = this.getTaskById(id);
+  //   if(task) {
+  //     task.title = taskData.title;
+  //     task.date = taskData.date;
+  //     task.description = taskData.description;
+  //   }
+  // }
 
-  archiveTask(id: number){
-    const taskTemp = this.tasks.find((task)=> task.id === id);
-    if(taskTemp) {
-      this.archivedTasks.unshift(taskTemp);
-      this.deleteTask(id);
-    }
-  }
+  // archiveTask(id: number){
+  //   const taskTemp = this.tasks.find((task)=> task.id === id);
+  //   if(taskTemp) {
+  //     this.archivedTasks.unshift(taskTemp);
+  //     this.deleteTask(id);
+  //   }
+  // }
 
-  markTaskIncomplete(id: number){
-    const taskTemp = this.archivedTasks.find((task)=> task.id === id);
-    if(taskTemp){
-      this.tasks.push(taskTemp);
-      this.tasks = this.tasks.sort((a,b)=>b.id-a.id);
-      this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
-    }
-  }
+  // markTaskIncomplete(id: number){
+  //   const taskTemp = this.archivedTasks.find((task)=> task.id === id);
+  //   if(taskTemp){
+  //     this.tasks.push(taskTemp);
+  //     this.tasks = this.tasks.sort((a,b)=>b.id-a.id);
+  //     this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
+  //   }
+  // }
 
 }
