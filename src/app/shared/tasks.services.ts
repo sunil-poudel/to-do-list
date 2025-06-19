@@ -12,18 +12,7 @@ export class TasksServices{
 
 
   constructor(){
-
-    //to fetch data from backend right at the start when this component becomes available
-    this.httpClient.get<
-      {id:number, title:string, date:string, description:string}[]
-    >("http://localhost:8080/apis/tasks").subscribe(
-      {
-        next: (task)=>{
-          this.taskFromDatabase = task;
-          console.log(task);
-        }
-      }
-    );
+    this.getTaskFromBackend();
   }
 
 
@@ -105,5 +94,19 @@ export class TasksServices{
   //     this.archivedTasks = this.archivedTasks.filter((task)=>task.id != id);
   //   }
   // }
+
+  getTaskFromBackend(){
+    //to fetch data from backend right at the start when this component becomes available
+    this.httpClient.get<
+      {id:number, title:string, date:string, description:string}[]
+    >("http://localhost:8080/apis/tasks").subscribe(
+      {
+        next: (task)=>{
+          this.taskFromDatabase = task;
+          console.log(task);
+        }
+      }
+    );
+  }
 
 }
