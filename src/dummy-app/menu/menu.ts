@@ -28,6 +28,19 @@ export class Menu {
     this.isEdit = false;
   }
 
+  onClickArchives(){
+    this.tasksServices.setArchived(true);
+  }
+
+  onClickDelete(){
+    this.getCurrentIndex();
+    if(this.currentIndex != undefined){
+      this.tasksServices.deleteTask(this.currentIndex);
+      // console.log("deleted task with id: "+this.currentIndex);
+      // console.log("remaining tasks:\n "+ this.tasksServices.getTasks().length);
+    }
+  }
+
   onClickEdit(){
     if(this.getCurrentTask()) {
       this.editDisplayFlag = true;
@@ -37,6 +50,19 @@ export class Menu {
     } else{
       this.isEdit = false;
       this.isSave = false;
+    }
+  }
+
+  onClickMarkComplete(){
+    const id = this.tasksServices.getCurrentTask();
+    if(id){
+      this.tasksServices.archiveTask(id);
+    }
+  }
+  onClickMarkIncomplete(){
+    const id = this.tasksServices.getCurrentTask();
+    if(id){
+      this.tasksServices.markTaskIncomplete(id);
     }
   }
 
@@ -71,4 +97,10 @@ export class Menu {
     this.submittedTaskToApp.emit({taskData:this.submittedTask, isSave:this.isSave, isEdit: this.isEdit});
   }
 
+  getArchivedStatus(){
+    return this.tasksServices.getArchivedStatus();
+  }
+  onClickBack(){
+    this.tasksServices.flipArchived();
+  }
 }

@@ -8,7 +8,7 @@ import {Footer} from './footer/footer';
 import {TaskData} from './shared/shared';
 import {TasksServices} from './shared/tasks.services';
 import {HttpClient} from '@angular/common/http';
-import {DummyTasksServices} from './shared/dummy.tasks.services';
+import {TasksServices} from './shared/tasks.services';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class App {
 
 
   private tasksServices = inject(TasksServices);
-  private dummyTasksServices = inject(DummyTasksServices);
+  private dummyTasksServices = inject(TasksServices);
   getNewlyAddedTask(task:{taskData: TaskData, isSave: boolean, isEdit:boolean}){
     this.newlyAddedTask = task.taskData;
     this.isSave = task.isSave;
