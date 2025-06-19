@@ -18,8 +18,11 @@ export class DummyTasksServices{
     this.postTaskToBackend(taskData);
   }
 
+  editTask(id:number, taskData: TaskData){
+    this.putTaskToBackend(id, taskData);
+  }
+
   getTaskFromBackend(){
-    //to fetch data from backend right at the start when this component becomes available
     this.httpClient.get<
       {id:number, title:string, date:string, description:string}[]
     >("http://localhost:8080/apis/tasks").subscribe(
@@ -37,6 +40,14 @@ export class DummyTasksServices{
     this.httpClient.post<TaskData>("http://localhost:8080/apis/tasks", task).subscribe(
       {
         next: (response)=>console.log("added task: ",response)
+      }
+    );
+  }
+
+  putTaskToBackend(id:number, task:TaskData){
+    this.httpClient.put<{id: number, title:string, date:string, description:string}>("http://localhost:8080/apis/tasks", task).subscribe(
+      {
+          next: (response) => {console.log("updated task: ", response)}
       }
     );
   }
