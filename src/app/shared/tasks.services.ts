@@ -31,14 +31,9 @@ export class TasksServices{
   }
 
   addTask(taskData: TaskData){
-    const task = {title:taskData.title, date:taskData.date, description:taskData.description};
-    this.tasks.unshift(task);
-
-    this.httpClient.post<{title: string, date: string, description: string}>("http://localhost:8080/apis/tasks", task).subscribe(
-      {
-        next: (response)=>console.log("added task: ",response)
-      }
-    );
+    // const task = {title:taskData.title, date:taskData.date, description:taskData.description};
+    this.tasks.unshift(taskData);
+    this.postTaskToBackend(taskData);
   }
 
   getTasks(){
@@ -105,6 +100,14 @@ export class TasksServices{
           this.taskFromDatabase = task;
           console.log(task);
         }
+      }
+    );
+  }
+
+  postTaskToBackend(task: TaskData){
+    this.httpClient.post<TaskData>("http://localhost:8080/apis/tasks", task).subscribe(
+      {
+        next: (response)=>console.log("added task: ",response)
       }
     );
   }
