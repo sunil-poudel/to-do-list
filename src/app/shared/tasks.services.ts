@@ -5,8 +5,6 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({providedIn: "root"})
 export class TasksServices{
   private tasks: {id: number, title:string, date:string, description:string}[] = [];
-  private archivedTasks: {id:number, title:string, date:string, description:string}[] = [];
-  private taskFromDatabase: {id:number, title:string, date:string, description:string}[] = [];
 
   private httpClient = inject(HttpClient);
 
@@ -27,7 +25,7 @@ export class TasksServices{
     >("http://localhost:8080/apis/tasks").subscribe(
       {
         next: (task)=>{
-          this.taskFromDatabase = task;
+          this.tasks = task;
           console.log(task);
         }
       }
