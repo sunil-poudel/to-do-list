@@ -14,6 +14,7 @@ export class Task {
   protected currentTask?:TaskDb;
 
   getCurrentTask(){
+    console.log(this.currentId);
     if(this.currentId){
       this.currentTask = this.tasksServices.getTaskById(this.currentId);
     }
