@@ -11,6 +11,7 @@ import {TaskDb} from '../shared/shared';
 export class Tasks {
   protected tasksServices = inject(TasksServices);
   protected tasks:TaskDb[] = [];
+  protected clickedTaskId!: number;
 
   constructor() {
     //note: i did this because i need to subscribe each time.
@@ -24,5 +25,7 @@ export class Tasks {
     );
   }
 
-
+  onClickTasks(){
+    
+  }
 }

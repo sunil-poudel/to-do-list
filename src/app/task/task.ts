@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {TasksServices} from '../shared/tasks.services';
 
 @Component({
@@ -9,6 +9,6 @@ import {TasksServices} from '../shared/tasks.services';
 })
 export class Task {
   protected tasksServices = inject(TasksServices);
-
+  @Input() currentId!:number;
 
 }
