@@ -22,4 +22,8 @@ export class Menu {
     this.displayFlag = displayFlag;
   }
 
+  postTaskToBackend(task: TaskData){
+    this.tasksServices.postTaskToBackend(task);
+  }
+
 }
