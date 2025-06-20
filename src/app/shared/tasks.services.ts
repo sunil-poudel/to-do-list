@@ -29,4 +29,8 @@ export class TasksServices{
     return this.getTaskFromBackend();
   }
 
+  getTaskById(id:number){
+    return this.tasks.find((task)=>task.id = id);
+  }
+
 }
