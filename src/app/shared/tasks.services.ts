@@ -31,4 +31,8 @@ export class TasksServices{
     );
   }
 
+  getAllTasks(){
+    return this.getTaskFromBackend();
+  }
+
 }

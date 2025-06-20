@@ -1,12 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {TasksServices} from '../shared/tasks.services';
-import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-tasks',
-  imports: [
-    NgClass
-  ],
+  imports: [],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
