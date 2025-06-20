@@ -11,18 +11,9 @@ export class TasksServices{
     this.getTaskFromBackend();
   }
   getTaskFromBackend(){
-      this.httpClient.get<
+      return this.httpClient.get<
       {id:number, title:string, date:string, description:string}[]
-    >("http://localhost:8080/apis/tasks").subscribe(
-      {
-        next: (task)=>{
-          this.tasks = task;
-          console.log(task);
-        }
-      }
-    );
-
-      return this.tasks;
+    >("http://localhost:8080/apis/tasks"); //obtain observable
   }
 
   postTaskToBackend(task: TaskData){
@@ -31,6 +22,10 @@ export class TasksServices{
         next: (response)=>console.log("added task: ",response)
       }
     );
+  }
+
+  getAllTasks(){
+    return this.getTaskFromBackend();
   }
 
 }

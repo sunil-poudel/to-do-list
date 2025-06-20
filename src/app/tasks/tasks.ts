@@ -10,7 +10,17 @@ import {TaskDb} from '../shared/shared';
 })
 export class Tasks {
   protected tasksServices = inject(TasksServices);
-  protected tasks:TaskDb[] = this.tasksServices.getTaskFromBackend();
+  protected tasks:TaskDb[] = [];
+
+  constructor() {
+    this.tasksServices.getAllTasks().subscribe(
+      {
+        next: (task)=>{
+          this.tasks = task;
+        }
+      }
+    );
+  }
 
 
 }
