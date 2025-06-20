@@ -17,4 +17,8 @@ import {TasksServices} from './shared/tasks.services';
 export class App {
   private tasksServices = inject(TasksServices);
   clickedTaskId!:number;
+
+  getClickedTaskId(id:number){
+    this.clickedTaskId = id;
+  }
 }

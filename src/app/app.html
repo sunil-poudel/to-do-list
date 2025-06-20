@@ -1,7 +1,7 @@
 <app-header/>
 <div id="tasks_and_task">
   <div style="grid-area: tasks" id="app_tasks">
-    <app-tasks/>
+    <app-tasks (clickedTaskId)="getClickedTaskId($event)"/>
   </div>
   <div style="grid-area: task" id="app_task">
     <app-task/>
