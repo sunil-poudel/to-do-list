@@ -17,7 +17,7 @@
       <!--      @if(!getArchivedStatus()){-->
       @for (task of tasks; track task.id) {
         <!--            <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task); onClick()">{{ task.title }}</div>-->
-        <div class="tasks" (click)="onClickTask()">
+        <div class="tasks">
               {{task.title}}
         </div>
       }
