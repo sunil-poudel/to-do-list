@@ -21,6 +21,8 @@ export class TasksServices{
         }
       }
     );
+
+      return this.tasks;
   }
 
   postTaskToBackend(task: TaskData){
@@ -29,10 +31,6 @@ export class TasksServices{
         next: (response)=>console.log("added task: ",response)
       }
     );
-  }
-
-  getAllTasks(){
-    return this.getTaskFromBackend();
   }
 
 }
