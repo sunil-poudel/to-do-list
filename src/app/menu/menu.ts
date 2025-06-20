@@ -18,4 +18,8 @@ export class Menu {
     this.displayFlag = true;
   }
 
+  getDisplayFlag( displayFlag:boolean){
+    this.displayFlag = displayFlag;
+  }
+
 }
