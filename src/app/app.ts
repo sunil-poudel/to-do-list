@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Header} from './header/header';
 import {Tasks} from './tasks/tasks';
@@ -20,5 +20,8 @@ export class App {
 
   getClickedTaskId(id:number){
     this.clickedTaskId = id;
+  }
+  getCurrentId(){
+    return this.clickedTaskId;
   }
 }

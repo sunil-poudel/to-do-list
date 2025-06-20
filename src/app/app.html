@@ -4,7 +4,7 @@
     <app-tasks (clickedTaskId)="getClickedTaskId($event)"/>
   </div>
   <div style="grid-area: task" id="app_task">
-    <app-task/>
+    <app-task [currentId]="getCurrentId()"/>
   </div>
 </div>
 <app-menu/>
