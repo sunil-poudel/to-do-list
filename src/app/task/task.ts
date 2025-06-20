@@ -9,6 +9,6 @@ import {TasksServices} from '../shared/tasks.services';
 })
 export class Task {
   protected tasksServices = inject(TasksServices);
-  @Input() currentId!:number;
+  @Input() currentId?:number;
 
 }

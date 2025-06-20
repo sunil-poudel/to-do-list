@@ -3,7 +3,8 @@
     <h1>Task Information</h1>
 <!--  </div>-->
   <div id="task" >
-<!--    @if(getTask()){-->
+    @if(currentId){
+      clicked {{currentId}}
 <!--      <div class="taskTitle">{{currentTask?.title}}</div>-->
 <!--      <div class="taskDate">{{currentTask?.date}}</div>-->
       <hr/>
@@ -11,6 +12,6 @@
 <!--    }-->
 <!--    @else{-->
       <div id="noTasks">Click on the task to the left to view it.</div>
-<!--    }-->
+    }
   </div>
 </div>
