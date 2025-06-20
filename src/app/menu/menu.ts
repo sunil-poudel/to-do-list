@@ -14,4 +14,8 @@ import {TasksServices} from '../shared/tasks.services';
 export class Menu {
   protected tasksServices = inject(TasksServices);
 
+  onClickAdd(){
+
+  }
+
 }
