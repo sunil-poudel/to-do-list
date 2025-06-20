@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {TasksServices} from '../shared/tasks.services';
 import {TaskDb} from '../shared/shared';
 
@@ -11,7 +11,7 @@ import {TaskDb} from '../shared/shared';
 export class Tasks {
   protected tasksServices = inject(TasksServices);
   protected tasks:TaskDb[] = [];
-  protected clickedTaskId!: number;
+  @Output() clickedTaskId = new EventEmitter<number>();
 
   constructor() {
     //note: i did this because i need to subscribe each time.
@@ -25,4 +25,8 @@ export class Tasks {
     );
   }
 
+  onClickTask(id:number){
+    this.clickedTaskId.emit(id);
+    // console.log("clicked id: ", this.clickedTaskId);
+  }
 }
