@@ -34,7 +34,7 @@
         next: (response)=>{
           const foundTask = response.find((task)=>task.id === id);
           callback(foundTask);
-          // console.log(foundTask);
+          console.log(foundTask);
         }
       });
     }
