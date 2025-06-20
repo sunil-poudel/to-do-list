@@ -15,9 +15,10 @@ export class Task {
 
   getCurrentTask(){
     console.log(this.currentId);
-    if(this.currentId){
+    if(this.currentId!=undefined){
       this.currentTask = this.tasksServices.getTaskById(this.currentId);
     }
+    console.log(this.currentTask);
     return this.currentTask;
   }
 }

@@ -2,7 +2,7 @@
 <!--  <div (click)="getTask()" id="task_heading">-->
     <h1>Task Information</h1>
 <!--  </div>-->
-  <div id="task">
+  <div id="task" (click)="getCurrentTask()">
     @if(currentId){
       clicked {{currentId}}
 <!--      <div class="taskTitle">{{currentTask?.title}}</div>-->
