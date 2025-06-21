@@ -21,5 +21,6 @@ export class Task {
           this.currentTask = task;
         });
     }
+    return this.currentTask;
   }
 }

@@ -26,6 +26,7 @@ export class Tasks {
   }
 
   onClickTask(id:number){
+    this.tasksServices.showTask = true;
     this.clickedTaskId.emit(id);
     // console.log("clicked id: ", this.clickedTaskId);
   }

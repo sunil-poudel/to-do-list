@@ -6,7 +6,7 @@
   export class TasksServices{
     private tasks: TaskDb[] = [];
     private httpClient = inject(HttpClient);
-
+    showTask:boolean = false;
 
     constructor(){
       this.getTaskFromBackend();

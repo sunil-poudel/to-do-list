@@ -2,10 +2,10 @@
 <!--  <div (click)="getTask()" id="task_heading">-->
     <h1>Task Information</h1>
 <!--  </div>-->
-  <div id="task" (click)="getCurrentTask()">
-    @if(currentTask && currentId){
+  <div id="task">
+    @if(tasksServices.showTask){
       clicked {{currentId}}
-      {{currentTask.title}}
+      {{getCurrentTask()?.title}}
 <!--      <div class="taskTitle">{{currentTask?.title}}</div>-->
 <!--      <div class="taskDate">{{currentTask?.date}}</div>-->
       <hr/>
