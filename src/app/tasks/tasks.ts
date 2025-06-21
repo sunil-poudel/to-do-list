@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, Output} from '@angular/core';
+import {afterEveryRender, Component, EventEmitter, inject, Output} from '@angular/core';
 import {TasksServices} from '../shared/tasks.services';
 import {TaskDb} from '../shared/shared';
 
@@ -23,6 +23,7 @@ export class Tasks {
     //     }
     //   }
     // );
+
   }
 
   onClickTask(id:number){
@@ -31,12 +32,20 @@ export class Tasks {
     // console.log("clicked id: ", this.clickedTaskId);
   }
 
-  getAllTasks(){
+  getTasksFromBackend(){
     this.tasksServices.getTaskFromBackend().subscribe(
       (response)=>{
-        return response;
+        this.tasks = response;
       }
     );
   }
+  //
+  // getAllTasks(){
+  //   this.getTasksFromBackend();
+  //   return this.tasks;
+  // }
+
+
+
 
 }

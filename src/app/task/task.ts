@@ -13,14 +13,14 @@ export class Task {
   @Input() currentId?:number;
   protected currentTask?:TaskDb;
 
-  getCurrentTask(){
-    if(this.currentId!=undefined && this.tasksServices.showTask){
-      this.tasksServices.getTaskById(this.currentId,
-        (task)=>{
-          this.currentTask = task;
-        });
-      this.tasksServices.showTask = false;
-    }
-    return this.currentTask;
-  }
+  // getCurrentTask(){
+  //   if(this.currentId!=undefined && this.tasksServices.showTask){
+  //     this.tasksServices.getTaskById(this.currentId,
+  //       (task)=>{
+  //         this.currentTask = task;
+  //       });
+  //     this.tasksServices.showTask = false;
+  //   }
+  //   return this.currentTask;
+  // }
 }

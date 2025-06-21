@@ -7,23 +7,25 @@
     <!--    }-->
   </div>
   <div id="tasks_list">
-    @if (!tasks) {
+
+<!--    @if (!tasks) {-->
       <!--      @if(getArchivedStatus()){-->
 <!--      <div class="tasks">No archived tasks!</div>-->
       <!--      } @else{-->
       <div class="tasks">Add a task from option below to get started!</div>
       <!--      }-->
-    } @else {
+<!--    } @else {-->
       <!--      @if(!getArchivedStatus()){-->
-      @for (task of tasks; track task.id) {
+<!--      @for (task of getTasksFromBackend(); track task.id) {-->
         <!--            <div class="tasks" [ngClass]="{'selected': selectedTask === task}" (click)="setCurrentTask(task.id); selectTask(task); onClick()">{{ task.title }}</div>-->
-        <div class="tasks" (click) = "onClickTask(task.id)">
-              {{task.title}}
-        </div>
-      }
+<!--        <div class="tasks" (click) = "onClickTask(task.id)">-->
+<!--              {{task.title}}-->
+<!--        </div>-->
+<!--      }-->
       <!--      }-->
-    }
+<!--    }-->
 
 
-  </div>
+<!--  </div>-->
+</div>
 </div>
