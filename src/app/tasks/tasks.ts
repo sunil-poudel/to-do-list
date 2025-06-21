@@ -31,4 +31,12 @@ export class Tasks {
     // console.log("clicked id: ", this.clickedTaskId);
   }
 
+  getAllTasks(){
+    this.tasksServices.getTaskFromBackend().subscribe(
+      (response)=>{
+        return response;
+      }
+    );
+  }
+
 }
