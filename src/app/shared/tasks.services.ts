@@ -9,7 +9,7 @@
     showTask:boolean = false;
 
     constructor(){
-      this.getTaskFromBackend();
+      // this.getTaskFromBackend();
     }
     getTaskFromBackend(){
         return this.httpClient.get<
