@@ -10,7 +10,7 @@ import {TaskDb} from '../shared/shared';
 })
 export class Tasks {
   protected tasksServices = inject(TasksServices);
-  protected tasks:TaskDb[] = this.tasksServices.getAllTasksFromDb();
+  protected tasks:TaskDb[] = [];
   @Output() clickedTaskId = new EventEmitter<number>();
 
   constructor() {
@@ -30,4 +30,5 @@ export class Tasks {
     this.clickedTaskId.emit(id);
     // console.log("clicked id: ", this.clickedTaskId);
   }
+
 }

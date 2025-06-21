@@ -7,7 +7,6 @@
     private tasks: TaskDb[] = [];
     private httpClient = inject(HttpClient);
     showTask:boolean = false;
-    shouldGetTask: boolean = false;
 
     constructor(){
       this.getTaskFromBackend();
@@ -42,13 +41,4 @@
         }
       });
     }
-
-    getAllTasksFromDb(){
-      return this.tasks;
-    }
-
-    shouldGetTaskFunc(){
-      this.shouldGetTask = true;
-    }
-
   }
