@@ -16,13 +16,13 @@ export class Tasks {
   constructor() {
     //note: i did this because i need to subscribe each time.
     //i'll look in depth later.
-    this.tasksServices.getAllTasks().subscribe(
-      {
-        next: (task)=>{
-          this.tasks = task;
-        }
-      }
-    );
+    // this.tasksServices.getAllTasks().subscribe(
+    //   {
+    //     next: (task)=>{
+    //       this.tasks = task;
+    //     }
+    //   }
+    // );
   }
 
   onClickTask(id:number){

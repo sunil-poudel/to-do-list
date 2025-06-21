@@ -4,7 +4,7 @@
 
   @Injectable({providedIn: "root"})
   export class TasksServices{
-    private tasks: TaskDb[] = [];
+    // private tasks: TaskDb[] = [];
     private httpClient = inject(HttpClient);
     showTask:boolean = false;
 
@@ -13,32 +13,25 @@
     }
     getTaskFromBackend(){
         return this.httpClient.get<
-        {id:number, title:string, date:string, description:string}[]
+        TaskDb[]
       >("http://localhost:8080/apis/tasks"); //obtain observable
     }
 
     postTaskToBackend(task: TaskData){
-      this.httpClient.post<TaskData>("http://localhost:8080/apis/tasks", task).subscribe(
-        {
-          next: (response)=>console.log("added task: ",response)
-        }
-      );
-      this.getAllTasks().subscribe({
-        next: (response) =>this.tasks = response
-      });
+      this.httpClient.post<TaskData>("http://localhost:8080/apis/tasks", task);
     }
 
-    getAllTasks(){
-      return this.getTaskFromBackend();
-    }
+    // getAllTasks(){
+    //   return this.getTaskFromBackend();
+    // }
 
-    getTaskById(id:number, callback:(task?:TaskDb)=>void){
-      this.getAllTasks().subscribe({
-        next: (response)=>{
-          const foundTask = response.find((task)=>task.id === id);
-          callback(foundTask);
-          console.log(foundTask);
-        }
-      });
-    }
+    // getTaskById(id:number, callback:(task?:TaskDb)=>void){
+    //   this.getAllTasks().subscribe({
+    //     next: (response)=>{
+    //       const foundTask = response.find((task)=>task.id === id);
+    //       callback(foundTask);
+    //       console.log(foundTask);
+    //     }
+    //   });
+    // }
   }
