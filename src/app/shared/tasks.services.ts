@@ -23,6 +23,9 @@
           next: (response)=>console.log("added task: ",response)
         }
       );
+      this.getAllTasks().subscribe({
+        next: (response) =>this.tasks = response
+      });
     }
 
     getAllTasks(){
@@ -37,6 +40,10 @@
           console.log(foundTask);
         }
       });
+    }
+
+    getAllTasksFromDb(){
+      return this.tasks;
     }
 
   }

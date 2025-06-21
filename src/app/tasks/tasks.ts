@@ -10,7 +10,7 @@ import {TaskDb} from '../shared/shared';
 })
 export class Tasks {
   protected tasksServices = inject(TasksServices);
-  protected tasks:TaskDb[] = [];
+  protected tasks:TaskDb[] = this.tasksServices.getAllTasksFromDb();
   @Output() clickedTaskId = new EventEmitter<number>();
 
   constructor() {
