@@ -5,10 +5,3 @@ the tasks.
 
 App is made solely with frontend framework Angular, without backend connection.
 
-I am working on its clone app, this time with data coming from backend apis,
-<a href="https://github.com/sunil-poudel/to-do-list-revised">here</a>
-
-please open in desktop mode for convenience, will be made
-mobile responsive soon.
-
-[//]: # (under maintenance)
