@@ -1,53 +1,20 @@
-/* app.component.css */
-
-:host {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-/* Container for everything between header and footer */
-.main-container {
-  flex: 1;
+.container {
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Two-column layout for tasks and task detail */
 #tasks_and_task {
-  display: flex;
-  gap: 24px;
-  flex: 1;
-  flex-wrap: wrap; /* for small screens */
-}
-
-#app_tasks {
-  flex: 1;
-  min-width: 280px;
-}
-
-#app_task {
-  flex: 2;
-  min-width: 320px;
-}
-
-app-menu {
-  margin-top: 32px;
-  width: 100%;
-}
-
-/* Keep footer consistent with header width */
-app-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #tasks_and_task {
+    grid-template-columns: 1fr;
+  }
 }

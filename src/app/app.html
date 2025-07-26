@@ -1,16 +1,13 @@
-<app-header></app-header>
-
-<div class="main-container">
+<app-header />
+<div class="container">
   <div id="tasks_and_task">
     <div id="app_tasks">
-      <app-tasks></app-tasks>
+      <app-tasks />
     </div>
     <div id="app_task">
-      <app-task></app-task>
+      <app-task />
     </div>
   </div>
-
-  <app-menu (submittedTaskToApp)="getNewlyAddedTask($event)"></app-menu>
+  <app-menu (submittedTaskToApp)="getNewlyAddedTask($event)" />
 </div>
-
-<app-footer></app-footer>
+<app-footer />

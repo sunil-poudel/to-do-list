@@ -1,42 +1,42 @@
-/* task.component.css */
-
 #task_details {
   width: 100%;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
-  min-height: 400px;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  border-radius: 8px;
 }
 
 #task_heading h1 {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #333;
-  cursor: pointer;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#task {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  min-height: 200px;
+  border: 1px solid #e0e0e0;
+  word-wrap: break-word;
 }
 
 .taskTitle {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 8px;
-  color: #222;
 }
 
 .taskDate {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 12px;
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .taskDescription {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
-  color: #444;
 }
 
 #noTasks {
-  color: #999;
   font-style: italic;
+  color: #aaa;
 }
