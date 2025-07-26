@@ -1,26 +1,89 @@
-div#logo_header > img{
-  height: 50px;
-  width: auto;
-  border-radius: 50%;
+/* header.css */
+
+header {
+  padding: 24px 32px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f3f4f6;
+  max-width: 800px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
 }
 
-header{
-  background-image: linear-gradient(purple, blue);
-  width: 50%;
-  height: 120px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
+.text-block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "heading image"
+    "subheading image";
+  align-items: start;
+  gap: 12px 24px;
 }
-@media (max-width: 580px){
-  header{
-    height: 150px;
+
+.heading {
+  grid-area: heading;
+  font-size: 2.25rem; /* ~36px */
+  font-weight: 700;
+  line-height: 1.1;
+  color: #e0e7ff; /* lighter lavender */
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+.subheading {
+  grid-area: subheading;
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 500;
+  color: #c7d2fe; /* soft lavender */
+  margin-top: 4px;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.text-block img {
+  grid-area: image;
+  width: 120px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(224, 231, 255, 0.7);
+  object-fit: cover;
+  justify-self: end; /* right align image in its grid cell */
+  transition: transform 0.3s ease;
+}
+
+.text-block img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive: Stack vertically on small screens */
+@media (max-width: 600px) {
+  header {
+    padding: 20px 16px;
+    margin: 24px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
   }
-}
-@media(max-width: 1007px){
-  header{
-    width:100%;
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .text-block img {
+    width: 90px;
+    border-width: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    justify-self: center;
+  }
+  .heading {
+    font-size: 1.75rem; /* ~28px */
+  }
+  .subheading {
+    font-size: 1rem; /* ~16px */
   }
 }
