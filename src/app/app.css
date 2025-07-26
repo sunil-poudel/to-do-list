@@ -1,23 +1,53 @@
-/* Add this to your global or app-level CSS */
+/* app.component.css */
 
-#tasks_and_task {
-  max-width: 800px; /* same max-width as header/footer */
-  margin: 20px auto 40px;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr; /* tasks list and task details side by side */
-  gap: 24px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* Make sure tasks and task components fill their grid areas */
-#app_tasks, #app_task {
+/* Container for everything between header and footer */
+.main-container {
+  flex: 1;
+  max-width: 1200px;
   width: 100%;
-  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-/* Optional: scroll if tasks list grows tall */
+/* Two-column layout for tasks and task detail */
+#tasks_and_task {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  flex-wrap: wrap; /* for small screens */
+}
+
 #app_tasks {
-  max-height: 600px;
-  overflow-y: auto;
-  padding-right: 8px; /* some padding so scrollbar doesn't overlap */
+  flex: 1;
+  min-width: 280px;
+}
+
+#app_task {
+  flex: 2;
+  min-width: 320px;
+}
+
+app-menu {
+  margin-top: 32px;
+  width: 100%;
+}
+
+/* Keep footer consistent with header width */
+app-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
