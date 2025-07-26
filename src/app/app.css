@@ -1,12 +1,23 @@
-div#tasks_and_task{
+/* Add this to your global or app-level CSS */
+
+#tasks_and_task {
+  max-width: 800px; /* same max-width as header/footer */
+  margin: 20px auto 40px;
   display: grid;
-  width: 50%;
-  grid-template-columns: 25% 75%;
-  margin: 0 auto;
-  grid-template-areas: "tasks task";
+  grid-template-columns: 1fr 1.2fr; /* tasks list and task details side by side */
+  gap: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media(max-width: 1007px){
-  div#tasks_and_task{
-    width:100%;
-  }
+
+/* Make sure tasks and task components fill their grid areas */
+#app_tasks, #app_task {
+  width: 100%;
+  height: auto;
+}
+
+/* Optional: scroll if tasks list grows tall */
+#app_tasks {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px; /* some padding so scrollbar doesn't overlap */
 }

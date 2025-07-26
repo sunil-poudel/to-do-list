@@ -1,44 +1,84 @@
-div#task{
-  box-sizing: border-box;
-  border: 1px black solid;
-  border-radius: 5px;
-  height: 300px;
-  overflow: scroll;
+/* task.css */
+
+#task_details {
+  max-width: 800px;
+  margin: 20px auto 40px;
+  padding: 24px 32px;
+  background: #f9fafb; /* very light gray */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  user-select: none;
+}
+
+#task_heading {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#task_heading h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
   text-align: center;
-  font-family: "Edu VIC WA NT Hand", cursive;
-
-}
-div.taskTitle{
-  margin-top: 3%;
-  font-weight: bold;
-  font-size: 18pt;
-}
-div#task > hr{
-  width: 80%;
-}
-div.taskDescription{
-  margin-top: 3%;
-  padding: 1rem;
-  font-size: 18pt;
+  user-select: text;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 6px;
 }
 
-div#noTasks{
-  padding: 30px;
-  font-size: 20pt;
-  margin: 20px auto;
+#task {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.taskTitle {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.taskDate {
+  font-style: italic;
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.taskDescription {
+  white-space: pre-wrap;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Placeholder when no task selected */
+#noTasks {
+  font-style: italic;
+  color: #94a3b8;
   text-align: center;
-  font-family: "Special Elite", system-ui;
-}
-div#task_heading{
-  text-align: right;
+  padding: 40px 0;
+  font-size: 1rem;
 }
 
-
-
-@media(max-width: 515px){
-  div#task{
-    margin-top: 60px;
+/* Responsive */
+@media (max-width: 600px) {
+  #task_details {
+    padding: 16px 20px;
+    margin: 16px auto 32px;
   }
-
+  #task_heading h1 {
+    font-size: 1.75rem;
+  }
+  .taskTitle {
+    font-size: 1.25rem;
+  }
+  .taskDate,
+  .taskDescription,
+  #noTasks {
+    font-size: 0.9rem;
+  }
 }
-

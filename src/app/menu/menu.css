@@ -1,31 +1,88 @@
-div#menu_div{
+/* menu.css - scrollable horizontal menu */
+
+#menu_div {
+  max-width: 800px;
+  margin: 20px auto;
   display: flex;
-  /*border: black solid 3px;*/
-  width: 50%;
-  margin: 10px auto;
-  gap: 20px;
+  flex-wrap: nowrap;         /* prevent wrapping */
+  gap: 16px;
+  overflow-x: auto;          /* enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  padding-bottom: 8px;       /* give some space below for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style for scrollbar for Webkit browsers */
+#menu_div::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menu_div::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#menu_div::-webkit-scrollbar-thumb {
+  background-color: #4f46e5;
+  border-radius: 4px;
+}
+
+/* Menu items */
+.menu {
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%);
+  color: #e0e7ff;
+  flex: 0 0 130px;           /* fixed width, no shrinking */
+  height: 130px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-div.menu{
-  border: 1px black solid;
-  width: 15%;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
-  font-size: 15pt;
-  margin-top: 20px;
-  font-weight: bold;
+  padding: 12px;
+  scroll-snap-align: start; /* optional for snap scrolling */
 }
-.menu:hover{
-  scale: 1.2;
-  border: 1px blue solid;
-  background-color: purple;
-  color: white;
+
+.menu p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-div.menu > img{
-  height: 30px;
-  width: auto;
+
+.menu img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
 }
-@media(max-width: 1007px){
-  div#menu_div{
-    width:100%;
+
+.menu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #menu_div {
+    gap: 12px;
+  }
+  .menu {
+    flex: 0 0 100px;
+    height: 100px;
+    padding: 10px;
+  }
+  .menu p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .menu img {
+    width: 40px;
+    height: 40px;
   }
 }

@@ -1,22 +1,119 @@
-.backdrop{
-  width: 100%;
+/* new-task dialog styling */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
+  background-color: rgba(30, 41, 59, 0.6); /* translucent dark overlay */
+  z-index: 1000;
+}
+
+dialog {
   position: fixed;
-  top:0;
-  left: 0;
-  background-color: rgba(0,0,0,0.8);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90vw;
+  background: #f9fafb; /* very light gray */
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(30, 41, 59, 0.3);
+  padding: 24px 32px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1010;
+  border: none;
+  outline: none;
 }
-dialog{
-  position: fixed;
-  top:30%;
-  left: 0;
-  border: 3px black dotted;
+
+/* Title */
+dialog h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1e293b; /* dark slate */
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
 }
-dialog > form > p.actions{
-  text-align: right;
+
+/* Form fields */
+form p {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #334155; /* dark slate gray */
+  font-size: 1rem;
 }
-dialog > form > p.actions > button{
-  margin: 0 5px;
-  font-size: 10pt;
-  font-weight: bold;
+
+form label {
+  margin-bottom: 6px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+  padding: 8px 12px;
+  border: 2px solid #cbd5e1; /* light blue-gray */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+  border-color: #4f46e5; /* indigo */
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+}
+
+/* Actions buttons container */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:disabled {
+  background: #94a3b8; /* gray-blue disabled */
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  dialog {
+    width: 90vw;
+    padding: 20px;
+  }
+  button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  form p {
+    font-size: 0.9rem;
+  }
 }
