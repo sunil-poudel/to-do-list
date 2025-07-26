@@ -1,14 +1,22 @@
-/* header.css */
-
 header {
-  padding: 24px 32px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Make header fill full container width */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Match container's horizontal padding */
+  padding: 24px 16px;
+
+  /* Same fonts & styling */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #f3f4f6;
-  max-width: 800px;
-  margin: 40px auto;
+
+  /* Background & styling */
   background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+
+  /* Add vertical margin to separate from other components */
+  margin: 40px 0 24px 0;
 }
 
 .text-block {
@@ -24,19 +32,19 @@ header {
 
 .heading {
   grid-area: heading;
-  font-size: 2.25rem; /* ~36px */
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.1;
-  color: #e0e7ff; /* lighter lavender */
+  color: #e0e7ff;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   margin: 0;
 }
 
 .subheading {
   grid-area: subheading;
-  font-size: 1.125rem; /* ~18px */
+  font-size: 1.125rem;
   font-weight: 500;
-  color: #c7d2fe; /* soft lavender */
+  color: #c7d2fe;
   margin-top: 4px;
   line-height: 1.4;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -50,7 +58,7 @@ header {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   border: 3px solid rgba(224, 231, 255, 0.7);
   object-fit: cover;
-  justify-self: end; /* right align image in its grid cell */
+  justify-self: end;
   transition: transform 0.3s ease;
 }
 
@@ -59,11 +67,11 @@ header {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* Responsive: Stack vertically on small screens */
+/* Responsive for small screens */
 @media (max-width: 600px) {
   header {
     padding: 20px 16px;
-    margin: 24px auto;
+    margin: 24px 0 16px 0;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
   }
@@ -81,9 +89,9 @@ header {
     justify-self: center;
   }
   .heading {
-    font-size: 1.75rem; /* ~28px */
+    font-size: 1.75rem;
   }
   .subheading {
-    font-size: 1rem; /* ~16px */
+    font-size: 1rem;
   }
 }

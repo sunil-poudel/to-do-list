@@ -1,21 +1,17 @@
 #tasks_div {
-  width: 100%;
-  box-sizing: border-box;
   padding: 1rem;
   background-color: #f9f9f9;
   border-radius: 8px;
-}
-
-#tasks_heading h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
 }
 
 #tasks_list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-height: 60vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
@@ -25,15 +21,15 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: 1px solid #ddd;
   word-wrap: break-word;
-  border: 1px solid #e0e0e0;
 }
 
 .tasks:hover {
-  background-color: #f0f0f0;
+  background-color: #eee;
 }
 
 .selected {
-  background-color: #d8eefe;
+  background-color: #cce5ff;
   border-left: 4px solid #007bff;
 }
